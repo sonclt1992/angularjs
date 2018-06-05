@@ -7,13 +7,30 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body ng-app="myApp" ng-controller="MyController">
-    <form action="" name="myform" novalidate>
+<body ng-app="myapp" ng-controller="MyController">
+    <!--<form action="" name="myform" novalidate>
         <div>
             <div ng-include = "'main.html'"></div>
             <div ng-include="'subject.html'"></div>
         </div>
-    </form>
+    </form>-->
+    <h2>AngularJS AJAX</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Percentage</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="info in infos">
+                <td>{{info.Name}}</td>
+                <td>{{info.RollNo}}</td>
+                <td>{{info.Percentage}}</td>
+            </tr>
+        </tbody>
+    </table>
     
     <!-- Script -->
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
