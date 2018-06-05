@@ -1,0 +1,24 @@
+<table>
+    <tr>
+        <td>Enter First Name: </td>
+        <td>
+            <input type="text" name="firstname" ng-model="info.firstname" required>
+            <span style="color: red" ng-show="myform.firstname.$dirty && myform.firstname.$invalid">
+                <span ng-show="myform.firstname.$error.required">First name is required</span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Enter Last Name: </td>
+        <td>
+            <input type="text" ng-model="info.lastname" name="lastname" required>
+            <span style="color: red" ng-show="myform.lastname.$dirty && myform.lastname.$invalid">
+                <span ng-show="myform.lastname.$error.required">Last name is required</span>
+            </span>
+        </td>
+    </tr>
+    <tr>
+        <td>Name: </td>
+        <td><input type="text" ng-model="info.fullname()"></td>
+    </tr>
+</table>
