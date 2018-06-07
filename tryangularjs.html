@@ -9,7 +9,7 @@
     <script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
     <title>Document</title>
 </head>
-<body ng-app="myapp">
+<body>
     <!--<form action="" name="myform" novalidate>
         <div>
             <div ng-include = "'main.html'"></div>
@@ -86,7 +86,24 @@
             }    
         });
     </script>-->
+    
+    <div ng-app="myApp" ng-controller="myController">
+        <p>The url of this page is: </p>
+        <h1>{{content}}</h1>
+        <h1>{{statusCode}}</h1>
+        <h1>{{statusText}}</h1>
+    </div>
 
+    <script>
+        var myApp = angular.module("myApp", []);
+        myApp.controller("myController", function($scope, $http){
+            $http.get("welcome.htm").then(function(response){
+                $scope.content = response.data;
+                $scope.statuscode = response.status;
+                $scope.statustext = response.statusText;
+            });
+        });
+    </script>
 
     <!-- Script -->
     <!--<script src = "https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>-->
